@@ -1,0 +1,330 @@
+<app-top-bar></app-top-bar>
+<div>
+  <form #f=ngForm>
+
+    <div class="container p-0">
+      <div class="mb-3 mt-3">
+        <span class="text-left text-capitalize heading" style="color:#0d416b">
+          <h2>LOAN APPLICATION FORM</h2>
+        </span>
+      </div>
+      <div class="card card-body shadow p-3 mb-4 rounded">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="text-left text-capitalize heading">
+              <h3 style="color: #00aae7">Personal details</h3>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <span class="small text-muted">First Name<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="First Name" name="in_FirstName"
+               maxlength='30'
+                pattern="[a-zA-Z ]*" required ngModel>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <span class="small text-muted">Last Name<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="Last Name" name='in_LastName' maxlength='30'
+               pattern="[a-zA-Z ]*" required ngModel>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <span class="small text-muted">Email<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control static-field" aria-label="email" name='in_Email_ID' value='email'
+               ngModel email required
+              #email=ngModel>
+              <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <span class="small text-muted">Contact Number<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control static-field" aria-label="phone" name='in_Phone'
+               value='phone' required ngModel>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <span class="small text-muted">Street Name<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="Address" name='in_Address1' required ngModel>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <span class="small text-muted">Apt #<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="Address 2" name='in_Address2' required ngModel>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <span class="small text-muted">City<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="City" name='in_City' pattern="[a-zA-Z ]*" required
+                ngModel>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <span class="small text-muted">State<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="state"
+                name='in_State' pattern="[a-zA-Z ]*" required
+                  ngModel>
+              </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <span class="small text-muted">Country<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="Country" name='in_Country'
+                pattern="[a-zA-Z ]*" required ngModel>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <span class="small text-muted">Zip Code<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="Zip Code" name='in_ZipCode'
+                maxlength='5' minlength='5' pattern="[0-9]*" required ngModel>
+            </div>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-md-4">
+            <span class="small text-muted">Date of Birth<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="date" class="form-control static-field" aria-label="dob" name='in_DOB' value='dob'
+              required ngModel>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <span class="small text-muted">SSN<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control static-field" minlength='9' maxlength='9' pattern="[ 1-9 ]*" aria-label="ssn"
+                name='in_SSN' value='SSN' required ngModel>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label class="small text-muted">Credit History<sup class="text-danger">*</sup></label><br>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" value="yes" name="in_Credit_History" ngModel>Yes
+                    </label>
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" value="no" name="in_Credit_History" ngModel>No
+                    </label>
+                  </div>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="small text-muted">Gender<sup class="text-danger">*</sup></label><br>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" value="male" name="in_Gender" ngModel>Male
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" value="female" name="in_Gender" ngModel>Female
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="small text-muted">Marital Status<sup class="text-danger">*</sup></label><br>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" value="single" name="in_Marital_Status" ngModel>Single
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" value="married" name="in_Marital_Status" ngModel>Married
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+     <div class="container mt-5 mb-5 p-0">
+
+      <div class="card card-body shadow p-3 mb-4 rounded">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="text-left text-capitalize heading">
+              <h3 style="color: #00aae7">Employment Details</h3>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="small text-muted">Self-Employed<sup class="text-danger">*</sup></label><br>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="in_Self_Employed" value="yes" ngModel>Yes
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="in_Self_Employed" value="no" ngModel>No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <span class="small text-muted">Years of employment<sup class="text-danger">*</sup></span>
+                <div class="input-group mb-3">
+                    <select name="in_Emp_Length" class="select-date form-control" required ngModel>
+                      <option value="" selected disabled>Please select</option>
+                      <option value='0'>Less than a year</option>
+                      <option value='1'>1 year</option>
+                      <option value='2'>2 years</option>
+                      <option value='3'>3 years</option>
+                      <option value='4'>4 years</option>
+                      <option value='5'>5 years</option>
+                      <option value='6'>6 years</option>
+                      <option value='7'>7 years</option>
+                      <option value='8'>8 years</option>
+                      <option value='9'>9 years</option>
+                      <option value='10'>More than 10 years</option>
+                    </select>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <span class="small text-muted">Applicant Income<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="income" name='in_ApplicantIncome' pattern="[0-9]*" required
+                ngModel>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <span class="small text-muted">Co-Applicant Income<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="coincome" name='in_CoapplicantIncome' pattern="[0-9]*" required
+                ngModel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5 mb-5 p-0">
+
+       <div class="card card-body shadow p-3 mb-4 rounded">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="text-left text-capitalize heading">
+              <h3 style="color: #00aae7">Loan Details</h3>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <span class="small text-muted">Loan Amount<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="loanamt" name='in_Loan_Amount' pattern="[0-9]*" required
+                ngModel>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <span class="small text-muted">Loan Type<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+                <select name="in_Loan_Type" class="select-date form-control" required ngModel>
+                  <option value="" selected disabled>Please select</option>
+                  <option value='medical'>Medical</option>
+                  <option value='car'>Car</option>
+                  <option value='credit'>Credit Card</option>
+                  <option value='debt'>Debt Consolidation</option>
+                  <option value='homeimprove'>Home Improvement</option>
+                  <option value='purchase'>Major Purchase</option>
+                  <option value='moving'>Moving</option>
+                  <option value='house'>House</option>
+                  <option value='education'>Education</option>
+                  <option value='renewable'>Renewable</option>
+                  <option value='business'>Small business</option>
+                  <option value='vacation'>Vacation</option>
+                  <option value='wedding'>Wedding</option>
+                  <option value='other'>Other</option>
+                </select>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <span class="small text-muted">Tenure(in months)<sup class="text-danger">*</sup></span>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="tenure" name='in_Tenure' pattern="[0-9]*" required
+                ngModel>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <span class="small text-muted">Home Ownership<sup class="text-danger">*</sup></span>
+                <div class="input-group mb-3">
+                  <select name="in_Home_Ownership" class="select-date form-control" required ngModel>
+                    <option value="" selected disabled>Please select</option>
+                    <option value='own'>Owner</option>
+                    <option value='rent'>Tenant</option>
+                    <option value='mortgage'>Mortgage</option>
+                    <option value='other'>Other</option>
+                  </select>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="small text-muted">Dependents<sup class="text-danger">*</sup></label><br>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="in_Dependents" value="yes" ngModel>Yes
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="in_Dependents" value="no" ngModel>No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"  style="float: right">
+          <button type="submit" class="btn btn-secondary"
+          (click)= "onSubmit()" [disabled]="!f.valid">Submit</button>
+       </div>
+    </div>
+
+  </form>
+</div>
