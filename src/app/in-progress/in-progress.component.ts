@@ -70,7 +70,7 @@ export class InProgressComponent implements OnInit {
    ci: '',
    zi: '',
    st: ''
- }
+ };
 
   constructor(
     private router: Router,
