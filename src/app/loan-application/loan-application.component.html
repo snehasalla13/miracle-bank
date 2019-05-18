@@ -42,7 +42,6 @@
               <input type="email" class="form-control static-field" aria-label="email" name='in_Email_ID' value='email'
                ngModel email required
               #email=ngModel>
-              <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
             </div>
           </div>
 
@@ -65,7 +64,7 @@
           <div class="col-md-6">
             <span class="small text-muted">Apt #<sup class="text-danger">*</sup></span>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" aria-label="Address 2" name='in_Address2' required ngModel>
+              <input type="text" class="form-control" aria-label="Address 2" name='in_Address2' ngModel>
             </div>
           </div>
         </div>
@@ -117,7 +116,7 @@
           <div class="col-md-4">
             <span class="small text-muted">SSN<sup class="text-danger">*</sup></span>
             <div class="input-group mb-3">
-              <input type="text" class="form-control static-field" minlength='9' maxlength='9' pattern="[ 1-9 ]*" aria-label="ssn"
+              <input type="text" class="form-control static-field" minlength='9' maxlength='9' pattern="[ 0-9 ]*" aria-label="ssn"
                 name='in_SSN' value='SSN' required ngModel>
             </div>
           </div>
@@ -320,8 +319,8 @@
           </div>
         </div>
       </div>
-      <div class="row"  style="float: right">
-          <button type="submit" class="btn btn-secondary"
+      <div class="row mb-5"  style="float: right">
+          <button type="submit" class="btn btn-primary"
           (click)= "onSubmit()" [disabled]="!f.valid">Submit</button>
        </div>
     </div>

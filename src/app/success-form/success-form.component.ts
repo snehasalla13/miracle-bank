@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoanService } from '../loan.service';
 
 @Component({
   selector: 'app-success-form',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessFormComponent implements OnInit {
 
-  constructor() { }
+  message;
+
+  constructor(private loanService: LoanService) { }
 
   ngOnInit() {
+    this.message = this.loanService.message;
+    console.log(this.loanService.message);
   }
 
 }

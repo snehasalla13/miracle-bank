@@ -10,25 +10,17 @@ import { LoanService } from '../loan.service';
 })
 export class LoanApplicationComponent implements OnInit {
   @ViewChild('f') form: NgForm;
+  id;
   constructor(private router: Router, private loanService: LoanService) { }
 
   ngOnInit() {
-    // this.loanService.testAPI().subscribe((result) => {
-    //   console.log(result);
-    // })
   }
 
-onSubmit() {
+onSubmit(custid) {
   console.log('bla', this.form.value);
+  this.id = custid;
   //console.log('bla', JSON.stringify(this.form.value));
-  this.loanService.addCustomer(this.form.value)
-  .subscribe((res) => {
-    console.log('response', res);
-    this.router.navigate(['/success']);
-  },
-   (err) => {
-     console.log('error', err);
-  });
+  this.loanService.addCustomer(this.form.value);
     //this.router.navigate(['/success']);
 }
 }

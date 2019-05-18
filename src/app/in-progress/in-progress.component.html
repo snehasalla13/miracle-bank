@@ -1,19 +1,375 @@
-<div class="container pt-4">
-  <div class= "row">
-      <div class="col-md-6">
-        <div class="desc-a">
-          <h3 class="title">Customer Information</h3>
+<app-top-bar></app-top-bar>
+<form #f=ngForm>
+  <div class="container mt-4">
+    <div class="card card-body shadow p-3 mb-4 rounded">
+      <div class="row">
+        <div class="col-md-6">
+          <span class="text-left text-capitalize heading">
+            <h3 style="color: #00aae7">Customer Details</h3>
+          </span>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="desc-b">
-          <h3 class="title">Credit Score</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <span class="small text-muted">First Name</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="First Name" name="out_FN"
+              [(ngModel)]="info.out_FN" ngModel readonly>
+          </div>
+
         </div>
-        <div class="desc-c">
-          <h3 class="title">Report</h3>
-          <button type="submit" class="btn btn-secondary text-right" (click)= "onSubmit()">Submit</button>
+
+        <div class="col-md-6">
+          <span class="small text-muted">Last Name</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Last Name" name='out_LS' maxlength='30'
+              pattern="[a-zA-Z ]*" [(ngModel)]="info.out_LS" ngModel readonly>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <span class="small text-muted">Email</span>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control static-field" aria-label="email" name='out_Email_ID'
+              [(ngModel)]="info.out_Email_ID" ngModel email readonly #email=ngModel>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <span class="small text-muted">Contact Number</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control static-field" aria-label="phone" name='out_PN'
+              [(ngModel)]="info.out_PN" ngModel readonly>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <span class="small text-muted">Street Name</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Address" name='out_A1' [(ngModel)]="info.out_A1" ngModel
+              readonly>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <span class="small text-muted">Apt #</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Address 2" name='out_A2' [(ngModel)]="info.out_A2"
+              ngModel readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <span class="small text-muted">City</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="City" name='out_City' pattern="[a-zA-Z ]*"
+              [(ngModel)]="info.out_City" ngModel readonly>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <span class="small text-muted">State</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="state" name='out_State' pattern="[a-zA-Z ]*"
+              [(ngModel)]="info.out_State" ngModel readonly>
+          </div>
+        </div>
+
+
+        <div class="col-md-3">
+          <span class="small text-muted">Country</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Country" name='out_Country'
+              [(ngModel)]="info.out_Country" pattern="[a-zA-Z ]*" ngModel readonly>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <span class="small text-muted">Zip Code</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Zip Code" name='out_Zip' maxlength='5' minlength='5'
+              pattern="[0-9]*" [(ngModel)]="info.out_Zip" ngModel readonly>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <span class="small text-muted">Date of Birth </span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Date of Birth" name='out_DOB' [(ngModel)]="info.out_DOB"
+              ngModel readonly>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <span class="small text-muted">SSN</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control static-field" minlength='9' maxlength='9' pattern="[ 0-9 ]*"
+              aria-label="ssn" name='out_SSN' [(ngModel)]="info.out_SSN" ngModel readonly>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <span class="small text-muted">Credit History</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control static-field" name='out_Credit_history'
+              [(ngModel)]="info.out_Credit_history" ngModel readonly>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <span class="small text-muted">Credit Score</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control static-field" name='out_Credit_Score'
+              [(ngModel)]="info.out_Credit_Score" ngModel readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <span class="small text-muted">Education </span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="education" name='out_Education'
+              [(ngModel)]="info.out_Education" ngModel readonly>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <span class="small text-muted">Gender</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Gender" name='out_Gender' [(ngModel)]="info.out_Gender"
+              ngModel readonly readonly>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <span class="small text-muted">Martial Status </span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Marital Status" name='out_Marital_Status'
+              [(ngModel)]="info.out_Marital_Status" ngModel readonly>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <span class="small text-muted">Self- Employed </span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Self Employed" name='out_Self_Employed'
+              [(ngModel)]="info.out_Self_Employed" ngModel readonly>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+      <div class="row">
+        <!-- <div class="col-md-3">
+                  <span class="small text-muted">Years of Employment </span>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Years of Employment" name='in_Emp_Length'
+                       ngModel readonly>
+                  </div>
+            </div> -->
+        <div class="col-md-4">
+          <span class="small text-muted">Applicant Income</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="income" name='out_App_Inc' pattern="[0-9]*"
+              [(ngModel)]="info.out_App_Inc" ngModel readonly>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <span class="small text-muted">Co-Applicant Income</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="coincome" name='out_Co_App_Inc' pattern="[0-9]*"
+              [(ngModel)]="info.out_Co_App_Inc" ngModel readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <span class="small text-muted">Dependents</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Dependents" name='out_Dependents'
+              [(ngModel)]="info.out_Dependents" ngModel readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <span class="small text-muted">Loan Amount</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="loanamt" name='out_Loan_Amount'
+              [(ngModel)]="info.out_Loan_Amount" ngModel>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <span class="small text-muted">Loan Type</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="loantype" name='out_Loan_Type'
+              [(ngModel)]="info.out_Loan_Type" ngModel readonly>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <span class="small text-muted">Tenure(in months)</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="tenure" name='out_Tenure' pattern="[0-9]*"
+              [(ngModel)]="info.out_Tenure" ngModel>
+          </div>
+        </div>
+        <!-- <div class="col-md-3">
+                  <span class="small text-muted">Home Ownership</span>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="home" name='in_Home_Ownership'
+                      ngModel readonly>
+                  </div>
+                </div> -->
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <span class="small text-muted">Loan Submitted Date</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="loansubdate" name='out_Loan_Sub_Date'
+              [(ngModel)]="info.out_Loan_Sub_Date" ngModel readonly>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <span class="small text-muted">Expected Dispurse Date</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="tenure" name='out_ExpDis_Date' pattern="[0-9]*"
+              [(ngModel)]="info.out_ExpDis_Date" ngModel readonly>
+          </div>
+        </div>
+        <!-- <div class="col-md-4">
+                    <span class="small text-muted">Home Ownership</span>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="home" name='in_Home_Ownership' pattern="[0-9]*"
+                        ngModel readonly>
+                    </div>
+                  </div> -->
+
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <span class="small text-muted">Risk Category</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="riskcat" name="out_ML_Risk_Category"
+              [(ngModel)]="info.out_ML_Risk_Category" ngModel readonly>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <span class="small text-muted">Suggested APR</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="apr" name='out_ML_Sugg_APR' pattern="[0-9]*"
+              [(ngModel)]="info.out_ML_Sugg_APR" ngModel readonly>
+          </div>
         </div>
 
       </div>
+      <div class="row">
+        <div class="col-md-4">
+          <span class="small text-muted">Suggested Amount</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="suggamt" name='out_ML_Sugg_Amt'
+              [(ngModel)]="info.out_ML_Sugg_Amt" ngModel readonly>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <span class="small text-muted">Suggested EMI</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="emi" name='out_ML_Sugg_EMI' pattern="[0-9]*"
+              [(ngModel)]="info.out_ML_Sugg_EMI" ngModel readonly>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <span class="small text-muted">Suggested Tenure</span>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="suggtenure" name='out_ML_Sugg_Tenure' pattern="[0-9]*"
+              [(ngModel)]="info.out_ML_Sugg_Tenure" ngModel readonly>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <span class="col-md-12 small text-muted">Comment</span>
+          <div class="input-group mb-3 px-3">
+              <textarea class="form-control rounded-0" id="comment" name="out_Comment"
+              [(ngModel)]="info.out_Comment" ngModel></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+              <span class="small text-muted">Home Ownership</span>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="home" name='out_Home_Owner'
+                  [(ngModel)]="info.out_Home_Owner" ngModel readonly>
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+              <span class="small text-muted">DTI</span>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="emi" name='out_DTI' pattern="[0-9]*"
+                  [(ngModel)]="info.out_DTI" ngModel readonly>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span class="small text-muted">Fico</span>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="fico" name='out_Fisco' pattern="[0-9]*"
+                  [(ngModel)]="info.out_Fisco" ngModel readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" *ngIf="approved">
+            <div class="col-md-6">
+              <span class="pt-5">Do you want to generate agreement?</span>
+              <span class="ml-3">
+                <button class="btn btn-primary" (click)="getPDF()">Generate</button>
+              </span>
+              <span class="ml-3">
+                <button class="btn btn-primary" (click)="goBack()">Later</button>
+              </span>
+            </div>
+            </div>
+
+          <!-- <div class="row" *ngIf="approved">
+            <div class="pt-4">
+              Do you want to generate PDF?<br>
+              <button class="btn btn-info" (click)="generatePDF()">Generate</button>
+            </div>
+          </div> -->
+
+    </div>
+    <div class="row mb-5" style="float:right">
+
+      <div class="mr-3">
+        <button type="submit" class="btn btn-secondary" (click)="goBack()">Back</button>
+      </div>
+      <div class="mr-3" *ngIf="!approved">
+        <button type="submit" class="btn btn-success" (click)="onStatus('Approved')">Approve</button>
+      </div>
+      <div class="mr-3" *ngIf="!approved">
+        <button type="submit" class="btn btn-danger" (click)="onStatus('Rejected')">Reject</button>
+      </div>
+      <div class="mr-3" *ngIf="!approved">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Re-Run
+          Model</button>
+      </div>
+
+
   </div>
-</div>
+  </div>
+</form>

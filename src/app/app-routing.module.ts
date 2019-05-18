@@ -6,6 +6,7 @@ import { InProgressComponent } from './in-progress/in-progress.component';
 import { CheckApplicationsComponent } from './check-applications/check-applications.component';
 import { SuccessFormComponent } from './success-form/success-form.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { ViewStatusComponent } from './view-status/view-status.component';
 
 const routes: Routes = [
   {path: '', component: AppComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'success', component: SuccessFormComponent},
   {path: 'check', component: CheckApplicationsComponent},
   {path: 'inprogress', component: InProgressComponent},
-  {path: 'topbar', component: TopBarComponent}
+  {path: 'topbar', component: TopBarComponent},
+  {path: 'view', component: ViewStatusComponent}
 ];
 
 @NgModule({

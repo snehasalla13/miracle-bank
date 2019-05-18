@@ -14,6 +14,7 @@ import { InProgressComponent } from './in-progress/in-progress.component';
 import { CheckApplicationsComponent } from './check-applications/check-applications.component';
 import { SuccessFormComponent } from './success-form/success-form.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { ViewStatusComponent } from './view-status/view-status.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     InProgressComponent,
     CheckApplicationsComponent,
     SuccessFormComponent,
-    TopBarComponent
+    TopBarComponent,
+    ViewStatusComponent
   ],
   imports: [
     BrowserModule,
