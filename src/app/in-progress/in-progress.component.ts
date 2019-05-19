@@ -12,7 +12,6 @@ export class InProgressComponent implements OnInit {
   @ViewChild("f") form: NgForm;
   info;
   id;
-
   approved = false;
 
   train = {
@@ -70,7 +69,7 @@ export class InProgressComponent implements OnInit {
    ci: '',
    zi: '',
    st: ''
- };
+ }
 
   constructor(
     private router: Router,
@@ -97,7 +96,7 @@ export class InProgressComponent implements OnInit {
 
   getPDF() {
     console.log(event);
-    this.agreement.loan = this.info.out_Loan_Amt;
+    this.agreement.loan = '1000';
     this.agreement.apr = this.info.out_ML_Sugg_APR;
     this.agreement.fn = this.info.out_FN;
     this.agreement.ln = this.info.out_LS;
@@ -106,8 +105,14 @@ export class InProgressComponent implements OnInit {
     this.agreement.zi = this.info.out_Zip;
     this.agreement.ci = this.info.out_City;
     console.log("agreement ", this.agreement);
-    this.loanService.generateAgreement(this.agreement).subscribe(res => {
+    this.loanService.generateAgreement(this.agreement).subscribe((res) => {
       console.log(res);
+    }, (err) => {
+      console.log("Error ", err.url);
+      alert("Congratulations! Your agreement has been successfully generated!")
+      // this.pdf_url = err.url;
+      // // this.router.navigateByUrl(this.pdf_url);
+      // window.location.href = this.pdf_url;
     });
   }
 
