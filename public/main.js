@@ -407,7 +407,7 @@ var InProgressComponent = /** @class */ (function () {
     };
     InProgressComponent.prototype.getPDF = function () {
         console.log(event);
-        this.agreement.loan = this.info.out_Loan_Amt;
+        this.agreement.loan = '1000';
         this.agreement.apr = this.info.out_ML_Sugg_APR;
         this.agreement.fn = this.info.out_FN;
         this.agreement.ln = this.info.out_LS;
@@ -418,6 +418,12 @@ var InProgressComponent = /** @class */ (function () {
         console.log("agreement ", this.agreement);
         this.loanService.generateAgreement(this.agreement).subscribe(function (res) {
             console.log(res);
+        }, function (err) {
+            console.log("Error ", err.url);
+            alert("Congratulations! Your agreement has been successfully generated!");
+            // this.pdf_url = err.url;
+            // // this.router.navigateByUrl(this.pdf_url);
+            // window.location.href = this.pdf_url;
         });
     };
     InProgressComponent.prototype.onStatus = function (status) {
@@ -648,7 +654,7 @@ var LoanService = /** @class */ (function () {
     };
     LoanService.prototype.generateAgreement = function (data) {
         console.log("HERE!");
-        return this.http.post("https://3c279d5c.ngrok.io/api/docusign", data, { headers: this.headers });
+        return this.http.post("http://127.0.0.1:5000/api/docusign", data, { headers: this.headers });
     };
     LoanService.prototype.setLoan = function (loan) {
         return this.loan.next(loan);
